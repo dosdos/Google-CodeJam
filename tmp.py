@@ -93,21 +93,21 @@ __author__ = 'david'
 # [('dave', 'B', 10), ('jane', 'B', 12), ('john', 'A', 15)]
 
 
-file = open("italy.txt", "r")
-
-line = next(file).strip()
-
-patt = r"<img src=\"([^<]+)\" class=\"player\"></a></div></div><div class=\"p-n\"><a href=\"[^<]+\">"
-patt += r"<span class=\"p-n-webname\">([^<]+)</span></a><span class=\"p-i-fieldpos\">([^<]+)</span><span class=\"p-i-clubname\">([^<]+)</span>"
-patt += r"</div><div class=\"p-ag\"><span class=\"p-i-age\">Age </span><span class=\"p-i-birthdate\" data-attr=\"[-\w]+\">([^<]+)</span></div><div class=\"p-wh\"><span class=\"p-i-width-height\">([0-9]+) - ([0-9]+)</span>"
-
-players = re.findall(patt, line)
-
-for player_data in players:
-
-    print(player_data)
-
-file.close()
+# file = open("italy.txt", "r")
+#
+# line = next(file).strip()
+#
+# patt = r"<img src=\"([^<]+)\" class=\"player\"></a></div></div><div class=\"p-n\"><a href=\"[^<]+\">"
+# patt += r"<span class=\"p-n-webname\">([^<]+)</span></a><span class=\"p-i-fieldpos\">([^<]+)</span><span class=\"p-i-clubname\">([^<]+)</span>"
+# patt += r"</div><div class=\"p-ag\"><span class=\"p-i-age\">Age </span><span class=\"p-i-birthdate\" data-attr=\"[-\w]+\">([^<]+)</span></div><div class=\"p-wh\"><span class=\"p-i-width-height\">([0-9]+) - ([0-9]+)</span>"
+#
+# players = re.findall(patt, line)
+#
+# for player_data in players:
+#
+#     print(player_data)
+#
+# file.close()
 
 
 # a = lambda b: b * 2
@@ -117,4 +117,32 @@ file.close()
 # c = b(c)
 # c = a(c)
 # print(int(c))
+
+l = [
+    'bosca',
+    'dosdos',
+    'apellizz',
+    'bugant',
+    'bugman',
+    'eitch',
+    'serex',
+    'chritchens',
+    'giulio',
+    'culo',
+    'johnny',
+    'teoti',
+]
+
+import random
+
+# random.shuffle(l)
+# print [(l[x], l[x + 1]) for x in range(0, len(l)-1, 2)]
+
+l = [1,3,5,4,8,2,0,5,4]
+
+sx = 7
+dx = len(l)
+
+print(l.index(min(l)))
+print(l[sx:dx])
 

@@ -3,7 +3,7 @@ Created on 03/05/apr/2014
 
 @author: dosdos
 
-Problem A. Name
+Problem C. Name
 https://code.google.com/codejam/contest/
 
 
@@ -20,32 +20,36 @@ WRITE_OUTPUT_HERE
 import unittest
 
 
-class ProblemA(object):
+
+class ProblemC(object):
+
     def __init__(self, input_file_name=None, output_file_name=None, log_file_name=None):
         self.input_file_name = input_file_name
         self.output_file_name = output_file_name
         self.log_file_name = log_file_name
 
     # file I/O
-    def read_word(self, f):
-        return next(f).strip()
+    def read_word(self, file):
+        return next(file).strip()
 
-    def read_int(self, f, b=10):
-        return int(self.read_word(f), b)
+    def read_int(self, file, b=10):
+        return int(self.read_word(file), b)
 
-    def read_words(self, f, d=' '):
-        return self.read_word(f).split(d)
+    def read_words(self, file, d=' '):
+        return self.read_word(file).split(d)
 
-    def read_ints(self, f, b=10, d=' '):
-        return [int(x, b) for x in self.read_words(f, d)]
+    def read_ints(self, file, b=10, d=' '):
+        return [int(x, b) for x in self.read_words(file, d)]
 
-    def read_decimals(self, f, b=10, d=' '):
-        return [float(x) for x in self.read_words(f, d)]
+    def read_decimals(self, file, b=10, d=' '):
+        return [float(x) for x in self.read_words(file, d)]
+
 
     def method_name(self, n):
-        return n * n
+        return n*n
 
     def solve_small(self):
+
         # create I/O files
         input_file = open(self.input_file_name, 'r')
         output_file = open(self.output_file_name, "w")
@@ -59,8 +63,9 @@ class ProblemA(object):
 
         # iterate on each case
         for case in range(T):
-            log_file.write("\nCase #%d: " % (case + 1))
-            print("\nCase #%d: " % (case + 1) )
+
+            log_file.write("\nCase #%d: " % (case+1) )
+            print("\nCase #%d: " % (case+1) )
 
             # get problem data
             N = self.read_int(input_file)
@@ -71,8 +76,9 @@ class ProblemA(object):
             log_file.write("%d %s" % (N, line))
             print("%d %s" % (N, line))
 
+
             # print output data!
-            output_file.write("Case #%d: %d\n" % (case + 1, counter))
+            output_file.write("Case #%d: %d\n" % (case+1,counter))
 
         # close I/O files
         input_file.close()
@@ -82,16 +88,16 @@ class ProblemA(object):
 
 class Test(unittest.TestCase):
     def setUp(self):
-        self.problem_A = ProblemA()
+        self.problem_C = ProblemC()
 
     def test_method(self):
-        self.assertEqual(self.problem_A.method_name(1), 1)
+        self.assertEqual(self.problem_C.method_name(1),1)
 
     def test_solve_small(self):
-        problem_A = ProblemA("A-sample.in", "A-sample.out", "A-log.out")
-        # problem_A = ProblemA("A-small-attempt0.in", "A-small-attempt0.out", "A-log.out")
-        # problem_A = ProblemA("A-large-attempt0.in", "A-large-attempt0.out", "A-log.out")
-        problem_A.solve_small()
+        problem_C = ProblemC("C-sample.in", "C-sample.out", "C-log.out")
+        # problem_C = ProblemC("C-small-attempt0.in", "C-small-attempt0.out", "C-log.out")
+        # problem_C = ProblemC("C-large-attempt0.in", "C-large-attempt0.out", "C-log.out")
+        problem_C.solve_small()
 
 
 if __name__ == '__main__':
