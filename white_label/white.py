@@ -54,23 +54,24 @@ def solve(file_in, file_out):
     # read file size
     T = read_int(input_file)
 
-    print("There are %d cases to solve! :)\n" % T)
+    print("\nThere are %d cases to solve! :)\n" % T)
 
     # iterate on each case
     for case in range(T):
-        print("\nCase #%d: " % (case + 1))
 
         # get problem data
         line = read_words(input_file)
-        N = int(line[0])
-        nums = line[1:]
-        print("%d %s" % (N, str(nums)))
+        w1 = line[0]
+        w2 = line[1]
+        print("%d %s" % (w1, w2))
+        print("Input #%d:\n%d %d" % (case+1, w1, w2))
 
         counter = 0
-        print("Case #%d: %s\n" % (case, 1))
 
         # print output data!
-        output_file.write("Case #%d: %d\n" % (case + 1, counter))
+        # print output data!
+        print("Case #%d: %s\n" % (case+1, counter))
+        output_file.write("Case #%d: %d\n" % (case+1, counter))
 
     # close I/O files
     input_file.close()
@@ -79,5 +80,11 @@ def solve(file_in, file_out):
 
 if __name__ == '__main__':
     input_file_name = "A-sample.in"
+    # input_file_name = "A-small-practice.in"
+    # input_file_name = "A-large-practice.in"
+
     output_file_name = "A-sample.out"
+    # output_file_name = "A-small-practice.out"
+    # output_file_name = "A-large-practice.out"
+
     solve(input_file_name, output_file_name)
