@@ -79,11 +79,11 @@ def solve(file_in, file_out):
 
 
 if __name__ == '__main__':
-    input_file_name = "A-sample.in"
+    input_file_name = "reverse_long.txt"
     # input_file_name = "A-small-practice.in"
     # input_file_name = "A-large-practice.in"
 
-    output_file_name = "A-sample.out"
+    output_file_name = "out.txt"
     # output_file_name = "A-small-practice.out"
     # output_file_name = "A-large-practice.out"
 
