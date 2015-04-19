@@ -1,29 +1,44 @@
 """
-Created on 10/04/apr/2015
+Created on 19/04/2015
 
 @author: dosdos
 
-Problem A. Consonants
-https://code.google.com/codejam/contest/2437488/dashboard#s=p0
+Problem B. Haircut
+https://code.google.com/codejam/contest/4224486/dashboard#s=p1
 
 
 ***Sample***
 
 Input
-4
-quartz 3
-straight 3
-gcj 2
-tsetse 2
+3
+2 4
+10 5
+3 12
+7 7 7
+3 8
+4 2 1
 
 
 Output
-Case #1: 4
-Case #2: 11
-Case #3: 3
-Case #4: 11
+Case #1: 1
+Case #2: 3
+Case #3: 1
 
 """
+
+
+def gcd(n, m):
+    while m:
+        n, m = m, n % m
+    return n
+
+
+def lcm_couple(n, m):
+    return n * m // gcd(n, m)
+
+
+def lcm(*args):
+    return reduce(lcm_couple, args)
 
 
 def read_word(f):
@@ -60,18 +75,41 @@ def solve(file_in, file_out):
     for case in range(T):
 
         # get problem data
-        line = read_words(input_file)
-        w1 = line[0]
-        w2 = line[1]
-        print("%d %s" % (w1, w2))
-        print("Input #%d:\n%d %d" % (case+1, w1, w2))
+        line = read_ints(input_file)
+        B = line[0]  # the number of barbers
+        N = line[1]  # place in line
+        minutes = read_ints(input_file)
+        print("Input #%d:\n%d %d %s" % (case+1, B, N, str(minutes)))
 
-        counter = 0
+        N = N % (lcm(*minutes) * B)
+        print N
+
+        barber = 1
+        barbers = [0 for i in range(B)]
+        remainings = N
+
+        # print "barbers:", barbers, " - remainings=", remainings
+        while remainings > 0:
+
+            for i in range(B):
+                if barbers[i] == 0:
+                    barbers[i] = minutes[i]
+
+                    if remainings > 0:
+                        remainings -= 1
+
+                    if remainings == 0:
+                        barber = i + 1
+                        break
+
+            for i in range(B):
+                barbers[i] -= 1
+
+            # print "barbers:", barbers, " - remainings=", remainings
 
         # print output data!
-        # print output data!
-        print("Case #%d: %s\n" % (case+1, counter))
-        output_file.write("Case #%d: %d\n" % (case+1, counter))
+        print("Case #%d: %s\n" % (case+1, barber))
+        output_file.write("Case #%d: %d\n" % (case+1, barber))
 
     # close I/O files
     input_file.close()
@@ -79,12 +117,12 @@ def solve(file_in, file_out):
 
 
 if __name__ == '__main__':
-    input_file_name = "reverse_long.txt"
-    # input_file_name = "A-small-practice.in"
-    # input_file_name = "A-large-practice.in"
+    # input_file_name = "B-sample.in"
+    input_file_name = "B-small-practice.in"
+    # input_file_name = "B-large-practice.in"
 
-    output_file_name = "out.txt"
-    # output_file_name = "A-small-practice.out"
-    # output_file_name = "A-large-practice.out"
+    # output_file_name = "B-sample.out"
+    output_file_name = "B-small-practice.out"
+    # output_file_name = "B-large-practice.out"
 
     solve(input_file_name, output_file_name)
