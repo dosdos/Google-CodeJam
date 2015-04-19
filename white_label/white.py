@@ -1,7 +1,7 @@
 """
 Created on 10/04/apr/2015
 
-@author: dosdos
+@author: Dos
 
 Problem A. Consonants
 https://code.google.com/codejam/contest/2437488/dashboard#s=p0
@@ -10,18 +10,19 @@ https://code.google.com/codejam/contest/2437488/dashboard#s=p0
 ***Sample***
 
 Input
-4
-quartz 3
-straight 3
-gcj 2
-tsetse 2
+3
+3 aa
+01 11 10
+2 asd
+101 111
+2 dsa
+01 10
 
 
 Output
-Case #1: 4
+Case #1: 42
 Case #2: 11
-Case #3: 3
-Case #4: 11
+Case #3: 11
 
 """
 
@@ -61,14 +62,14 @@ def solve(file_in, file_out):
 
         # get problem data
         line = read_words(input_file)
-        w1 = line[0]
+        w1 = int(line[0])
         w2 = line[1]
-        print("%d %s" % (w1, w2))
-        print("Input #%d:\n%d %d" % (case+1, w1, w2))
+        nums = read_ints(input_file)
+        print("%d %s %s" % (w1, w2, str(nums)))
+        print("Input #%d:\n%d %s %s" % (case+1, w1, w2, str(nums)))
 
         counter = 0
 
-        # print output data!
         # print output data!
         print("Case #%d: %s\n" % (case+1, counter))
         output_file.write("Case #%d: %d\n" % (case+1, counter))
@@ -79,12 +80,12 @@ def solve(file_in, file_out):
 
 
 if __name__ == '__main__':
-    input_file_name = "reverse_long.txt"
-    # input_file_name = "A-small-practice.in"
-    # input_file_name = "A-large-practice.in"
+    input_file_name = "sample.in"
+    # input_file_name = "A-small-attempt0.in"
+    # input_file_name = "A-large.in"
 
-    output_file_name = "out.txt"
-    # output_file_name = "A-small-practice.out"
-    # output_file_name = "A-large-practice.out"
+    output_file_name = "sample.out"
+    # output_file_name = "A-small-attempt0.out"
+    # output_file_name = "A-large.out"
 
     solve(input_file_name, output_file_name)
