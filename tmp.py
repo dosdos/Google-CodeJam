@@ -118,31 +118,30 @@ __author__ = 'david'
 # c = a(c)
 # print(int(c))
 
-l = [
-    'bosca',
-    'dosdos',
-    'apellizz',
-    'bugant',
-    'bugman',
-    'eitch',
-    'serex',
-    'chritchens',
-    'giulio',
-    'culo',
-    'johnny',
-    'teoti',
-]
+# l = ['bosca', 'dosdos', 'apellizz', 'bugant', 'bugman', 'eitch', 'serex', 'chritchens', 'giulio', 'culo', 'johnny', 'teoti',]
 
 import random
 
 # random.shuffle(l)
 # print [(l[x], l[x + 1]) for x in range(0, len(l)-1, 2)]
 
-l = [1,3,5,4,8,2,0,5,4]
 
-sx = 7
-dx = len(l)
+def print_args(p, *args):
+    print('param: ', p, '\nargs: ',)
+    for a in args: print(a,)
 
-print(l.index(min(l)))
-print(l[sx:dx])
 
+print_args("ciao", ('A', 'B', 'C'), 3, 2.5, 'hello')
+
+
+def print_kwargs(f, g, **kwargs):
+    # Check for a key
+    m = kwargs['m'] if 'm' in kwargs else None
+    if m: print("Value '%s' founded for key '%s'! :)" % (str(m), str(kwargs['m'])))
+    # Print all keys
+    for k in kwargs.keys(): print(kwargs[k])
+
+
+print_kwargs("ciao", "mondo", m="amico", n="mio", t="Tony")
+args = {'m': "amico", 'n': "mio", 't': "Tony"}
+print_kwargs(1, 2, **args)
