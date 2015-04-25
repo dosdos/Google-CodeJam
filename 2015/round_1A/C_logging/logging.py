@@ -3,8 +3,8 @@ Created on 10/04/apr/2015
 
 @author: dosdos
 
-Problem A. Consonants
-https://code.google.com/codejam/contest/2437488/dashboard#s=p0
+Problem C. Logging
+https://code.google.com/codejam/contest/4224486/dashboard#s=p2
 
 
 ***Sample***

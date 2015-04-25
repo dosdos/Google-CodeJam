@@ -3,8 +3,8 @@ Created on 11/04/apr/2015
 
 @author: dosdos
 
-Problem A. Standing Ovation
-https://code.google.com/codejam/contest/6224486/dashboard#s=p0
+Problem A. Infinite House of Pancakes
+https://code.google.com/codejam/contest/6224486/dashboard#s=p1
 
 
 ***Sample***
