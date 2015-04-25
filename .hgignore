@@ -5,4 +5,5 @@ syntax: regexp
 .pyc
 .orig
 .DS_Store
+.out
 .idea/*
