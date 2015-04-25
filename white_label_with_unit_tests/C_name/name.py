@@ -1,11 +1,10 @@
 """
-Created on 03/05/apr/2014
+Created on 02/05/2015
 
-@author: dosdos
+@author: Dos
 
-Problem B. Name
+Problem C.
 https://code.google.com/codejam/contest/
-
 
 
 ***Sample***
@@ -21,7 +20,7 @@ import unittest
 
 
 
-class ProblemB(object):
+class ProblemC(object):
 
     def __init__(self, input_file_name=None, output_file_name=None, log_file_name=None):
         self.input_file_name = input_file_name
@@ -88,16 +87,16 @@ class ProblemB(object):
 
 class Test(unittest.TestCase):
     def setUp(self):
-        self.problem_B = ProblemB()
+        self.problem_C = ProblemC()
 
     def test_method(self):
-        self.assertEqual(self.problem_B.method_name(1),1)
+        self.assertEqual(self.problem_C.method_name(1),1)
 
     def test_solve_small(self):
-        problem_B = ProblemB("B-sample.in", "B-sample.out", "B-log.out")
-        # problem_B = ProblemB("B-small-attempt0.in", "B-small-attempt0.out", "B-log.out")
-        # problem_B = ProblemB("B-large-attempt0.in", "B-large-attempt0.out", "B-log.out")
-        problem_B.solve_small()
+        problem_C = ProblemC("C-sample.in", "C-sample.out", "C-log.out")
+        # problem_C = ProblemC("C-small-attempt0.in", "C-small-attempt0.out", "C-log.out")
+        # problem_C = ProblemC("C-large-attempt0.in", "C-large-attempt0.out", "C-log.out")
+        problem_C.solve_small()
 
 
 if __name__ == '__main__':
