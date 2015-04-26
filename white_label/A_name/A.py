@@ -66,7 +66,7 @@ if __name__ == '__main__':
     print("\nThere are %d cases to solve! :)\n" % T)
 
     # iterate on each case
-    for case in range(T):
+    for case in range(1, T+1):
         # read input args
         line_1 = read_words(input_file)
         w1 = int(line_1[0])
