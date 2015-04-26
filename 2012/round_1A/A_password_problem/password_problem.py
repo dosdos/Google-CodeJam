@@ -52,7 +52,8 @@ def solve(case, **kwargs):
     B = kwargs['B']
     p = kwargs['p_list']
 
-    best, x = B + 2.0, 1
+    best = B + 2.0
+    x = 1
     for i in xrange(A):
         x *= p[i]
         best = min(best, (B - i) + (A - i - 1) + (B + 1) * (1 - x))
