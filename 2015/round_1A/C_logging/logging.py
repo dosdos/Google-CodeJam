@@ -10,18 +10,42 @@ https://code.google.com/codejam/contest/4224486/dashboard#s=p2
 ***Sample***
 
 Input
-4
-quartz 3
-straight 3
-gcj 2
-tsetse 2
+2
+5
+0 0
+10 0
+10 10
+0 10
+5 5
+9
+0 0
+5 0
+10 0
+0 5
+5 5
+10 5
+0 10
+5 10
+10 10
 
 
 Output
-Case #1: 4
-Case #2: 11
-Case #3: 3
-Case #4: 11
+Case #1:
+0
+0
+0
+0
+1
+Case #2:
+0
+0
+0
+0
+3
+0
+0
+0
+0
 
 """
 
@@ -46,45 +70,47 @@ def read_decimals(f, d=' '):
     return [float(x) for x in read_words(f, d)]
 
 
-def solve(file_in, file_out):
+def solve(case, **kwargs):
+    # get problem data
+    N = kwargs['N']
+    trees = kwargs['trees']
+
+    return "Case #{}: {}\n".format(case, trees)
+
+
+INPUT_FILE_NAME = "C-sample.in"
+# INPUT_FILE_NAME = "C-small-attempt0.in"
+# INPUT_FILE_NAME = "C-large.in"
+
+OUTPUT_FILE_NAME = "C-sample.out"
+# OUTPUT_FILE_NAME = "C-small-attempt0.out"
+# OUTPUT_FILE_NAME = "C-large.out"
+
+if __name__ == '__main__':
+
     # create I/O files
-    input_file = open(file_in, 'r')
-    output_file = open(file_out, "w")
+    input_file = open(INPUT_FILE_NAME, 'r')
+    output_file = open(OUTPUT_FILE_NAME, "w")
 
     # read file size
     T = read_int(input_file)
-
     print("\nThere are %d cases to solve! :)\n" % T)
 
     # iterate on each case
     for case in range(T):
+        # read input args
+        N = read_int(input_file)
+        l = []
+        for i in range(N):
+            point = read_ints(input_file)
+            l.append((point[0], point[1]))
+        args = {'N': N, 'trees': l}
 
-        # get problem data
-        line = read_words(input_file)
-        w1 = line[0]
-        w2 = line[1]
-        print("%d %s" % (w1, w2))
-        print("Input #%d:\n%d %d" % (case+1, w1, w2))
-
-        counter = 0
-
-        # print output data!
-        # print output data!
-        print("Case #%d: %s\n" % (case+1, counter))
-        output_file.write("Case #%d: %d\n" % (case+1, counter))
+        print("Input #{}:\n{}".format(case, args))
+        out = solve(case, **args)
+        print(out)
+        output_file.write(out)
 
     # close I/O files
     input_file.close()
     output_file.close()
-
-
-if __name__ == '__main__':
-    input_file_name = "reverse_long.txt"
-    # input_file_name = "A-small-practice.in"
-    # input_file_name = "A-large-practice.in"
-
-    output_file_name = "out.txt"
-    # output_file_name = "A-small-practice.out"
-    # output_file_name = "A-large-practice.out"
-
-    solve(input_file_name, output_file_name)
