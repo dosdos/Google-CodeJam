@@ -76,6 +76,7 @@ if __name__ == '__main__':
 
         print("Input #{}:\n{}".format(case, args))
         out = solve(case, **args)
+        print(out)
         output_file.write(out)
 
     # close I/O files
