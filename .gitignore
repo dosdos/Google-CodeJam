@@ -1,9 +1,3 @@
-syntax: regexp
-.pydevproject
-.project
-.prefs
 .pyc
-.orig
 .DS_Store
-.out
 .idea/*
