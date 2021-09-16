@@ -1,0 +1,21 @@
+5
+9
+99
+799
+9999
+59999
+
+case: 10 - prev: 910 - solution: 12
+case: 100 - prev: 910 - solution: 123
+case: 800 - prev: 7980 - solution: 910
+case: 10000 - prev: 91011 - solution: 12345
+case: 60000 - prev: 596061 - solution: 78910
+case: 80000 - prev: 798081 - solution: 91011
+case: 98000 - prev: 101112 - solution: 99100
+
+case: 90 - prev: 910 - solution: 123
+case: 800 - prev: 7980 - solution: 910
+case: 1000 - prev: 1234 - solution: 1011
+case: 60000 - prev: 596061 - solution: 78910
+case: 80000 - prev: 798081 - solution: 91011
+case: 98000 - prev: 123456 - solution: 99100
